@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amar Dhara Foundation | Registered Public Charitable Trust</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root { --primary-green: #1E5631; --soft-yellow: #FFFDE7; --accent-yellow: #FFD54F; }
+        body { font-family: 'Inter', sans-serif; background-color: var(--soft-yellow); color: #333; scroll-behavior: smooth; }
+        .bg-brand-green { background-color: var(--primary-green); }
+        .text-brand-green { color: var(--primary-green); }
+        .border-brand-green { border-color: var(--primary-green); }
+        .sticky-nav { position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); }
+        .donation-chip.active { background-color: var(--primary-green); color: white; border-color: var(--primary-green); }
+        .glass-card { background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(10px); }
+        #qrModal { display: none; background: rgba(0,0,0,0.85); }
+    </style>
+</head>
+<body>
+
+    <!-- TOP NAVIGATION -->
+    <nav class="bg-white sticky-nav">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex justify-between items-center">
+            <div class="flex items-center gap-4">
+                <img src="https://i.ibb.co/BH0xP206/f11c7d00-15bd-495a-a7f5-e66b4aac1df6.jpg" alt="Logo" class="h-14 w-14 rounded-full border-2 border-brand-green">
+                <div>
+                    <h1 class="text-xl font-bold text-brand-green leading-none">AMAR DHARA FOUNDATION</h1>
+                    <p class="text-[10px] font-semibold text-gray-500 uppercase tracking-widest mt-1" data-i18n="tagline">Registered Public Charitable Trust</p>
+                </div>
+            </div>
+            <div class="flex items-center gap-4">
+                <select id="langPicker" onchange="switchLang(this.value)" class="bg-gray-100 border-none rounded-lg px-3 py-2 text-sm font-semibold cursor-pointer outline-none focus:ring-2 focus:ring-green-700">
+                    <option value="en">English</option>
+                    <option value="hi">हिन्दी</option>
+                    <option value="bn">বাংলা</option>
+                    <option value="ta">தமிழ்</option>
+                    <option value="gu">ગુજરાતી</option>
+                </select>
+                <a href="#donate" class="bg-brand-green text-white px-6 py-2 rounded-full font-bold hover:bg-opacity-90 transition hidden md:block" data-i18n="nav_donate">Quick Donate</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO IMPACT BANNER -->
+    <section class="relative h-[450px] flex items-center justify-center">
+        <img src="https://i.ibb.co/XZxZ6LfH/88dee948-f04f-4e42-97d7-c57bcf4c9d82.jpg" class="absolute inset-0 w-full h-full object-cover brightness-[0.4]" alt="Banner">
+        <div class="relative text-center px-4 max-w-4xl">
+            <h2 class="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight" data-i18n="hero_title">Service to Humanity is Service to God</h2>
+            <p class="text-xl text-yellow-100 mb-8 font-light" data-i18n="hero_sub">Join us in our mission to provide food, education, and dignity to the underserved communities of India.</p>
+            <a href="#donate" class="bg-[#FFD54F] text-black px-10 py-4 rounded-full text-xl font-bold shadow-xl hover:scale-105 transition-transform inline-block" data-i18n="btn_start">Start Your Contribution</a>
+        </div>
+    </section>
+
+    <!-- LEADERSHIP SHOWCASE (Optimized for Visibility) -->
+    <section class="max-w-7xl mx-auto py-20 px-6">
+        <div class="grid lg:grid-cols-2 gap-12 items-center bg-white rounded-[3rem] overflow-hidden shadow-2xl border border-green-50">
+            <!-- Chairperson Image: Full Visibility -->
+            <div class="relative h-full min-h-[500px]">
+                <img src="https://i.ibb.co/NnSCLgX2/675251d1-2712-48e5-83af-b50ca37d97de.jpg" class="absolute inset-0 w-full h-full object-cover object-top" alt="Chairperson">
+                <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-10 text-white">
+                    <p class="text-yellow-400 font-bold tracking-widest uppercase text-sm mb-2">Our Visionary Leadership</p>
+                    <h3 class="text-3xl font-bold">Leading with Compassion</h3>
+                </div>
+            </div>
+            <!-- Message -->
+            <div class="p-12 lg:p-20">
+                <div class="w-20 h-1 bg-brand-green mb-8"></div>
+                <h3 class="text-4xl font-bold text-brand-green mb-6" data-i18n="cp_title">Chairperson's Message</h3>
+                <p class="text-xl text-gray-600 leading-relaxed italic mb-8" data-i18n="cp_msg">
+                    "At Amar Dhara Foundation, our work is not just about charity; it is about restoring the inherent dignity of every human being. We believe that no child should be without a book and no elder should be without care."
+                </p>
+                <div class="flex items-center gap-4 p-6 bg-yellow-50 rounded-2xl border border-yellow-200">
+                    <div class="bg-brand-green text-white p-3 rounded-full">
+                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                    </div>
+                    <div>
+                        <p class="font-bold text-lg">Dedicated to Humanity</p>
+                        <p class="text-sm text-gray-500">Amar Dhara Foundation Team</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICE PILLARS -->
+    <section class="bg-white py-20 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h3 class="text-4xl font-bold text-brand-green mb-4" data-i18n="pillars_title">Our Core Pillars of Change</h3>
+                <img src="https://i.ibb.co/VpMYnbT0/2c902fcc-599f-4649-9f3d-9421dffc2a3a.jpg" class="w-full max-w-2xl mx-auto rounded-3xl mt-8 shadow-lg" alt="Mission">
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Pillar 1 -->
+                <div class="p-10 rounded-3xl bg-[#FFF9C4] border-b-8 border-brand-green transition hover:-translate-y-2">
+                    <div class="text-5xl mb-6">📖</div>
+                    <h4 class="text-2xl font-bold mb-4" data-i18n="p1_h">Education & Literacy</h4>
+                    <p class="text-gray-600 leading-relaxed" data-i18n="p1_p">Providing primary educational resources, stationary, and foundational skill classes to disadvantaged youths.</p>
+                </div>
+                <!-- Pillar 2 -->
+                <div class="p-10 rounded-3xl bg-[#FFF9C4] border-b-8 border-brand-green transition hover:-translate-y-2">
+                    <div class="text-5xl mb-6">👴</div>
+                    <h4 class="text-2xl font-bold mb-4" data-i18n="p2_h">Health & Elderly Care</h4>
+                    <p class="text-gray-600 leading-relaxed" data-i18n="p2_p">Organizing healthcare clinics, distributing checkups, and fostering social support for isolated elders.</p>
+                </div>
+                <!-- Pillar 3 -->
+                <div class="p-10 rounded-3xl bg-[#FFF9C4] border-b-8 border-brand-green transition hover:-translate-y-2">
+                    <div class="text-5xl mb-6">🍲</div>
+                    <h4 class="text-2xl font-bold mb-4" data-i18n="p3_h">Community Rehabilitation</h4>
+                    <p class="text-gray-600 leading-relaxed" data-i18n="p3_p">Delivering ground-level food drives, nutritional aid, and community assistance programs daily.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DONATION SECTION (HelpAge Clone Logic) -->
+    <section id="donate" class="max-w-4xl mx-auto py-24 px-4">
+        <div class="bg-white rounded-[2.5rem] shadow-2xl overflow-hidden border border-gray-100">
+            <div class="bg-brand-green text-white p-8 text-center">
+                <h2 class="text-3xl font-bold" data-i18n="don_title">Support Our Cause</h2>
+                <p class="text-green-100 mt-2">Every rupee you donate creates a legacy of kindness.</p>
+            </div>
+            
+            <form id="donForm" class="p-10 space-y-8">
+                <!-- Citizenship & Type -->
+                <div class="grid grid-cols-2 gap-4">
+                    <button type="button" class="citizen-toggle active border-2 border-brand-green bg-brand-green text-white py-3 rounded-xl font-bold transition">Indian Citizens</button>
+                    <button type="button" class="citizen-toggle border-2 border-gray-200 py-3 rounded-xl font-bold text-gray-500">Foreign / OCI</button>
+                </div>
+
+                <div class="flex justify-center space-x-12 py-4 border-y border-gray-50">
+                    <label class="flex items-center gap-3 cursor-pointer font-bold text-lg">
+                        <input type="radio" name="freq" value="one-time" checked class="w-6 h-6 accent-brand-green"> One Time
+                    </label>
+                    <label class="flex items-center gap-3 cursor-pointer font-bold text-lg">
+                        <input type="radio" name="freq" value="monthly" class="w-6 h-6 accent-brand-green"> Monthly
+                    </label>
+                </div>
+
+                <!-- Presets -->
+                <div class="grid grid-cols-3 gap-4">
+                    <button type="button" class="amt-chip py-4 border-2 border-gray-200 rounded-xl font-bold text-xl hover:bg-green-50" onclick="setAmt(5000)">₹5000</button>
+                    <button type="button" class="amt-chip py-4 border-2 border-gray-200 rounded-xl font-bold text-xl hover:bg-green-50" onclick="setAmt(10000)">₹10000</button>
+                    <button type="button" class="amt-chip py-4 border-2 border-gray-200 rounded-xl font-bold text-xl hover:bg-green-50" onclick="setAmt(20000)">₹20000</button>
+                </div>
+
+                <!-- Amount Input -->
+                <div class="relative">
+                    <span class="absolute left-5 top-1/2 -translate-y-1/2 text-2xl font-bold text-gray-400">₹</span>
+                    <input type="number" id="amtInp" placeholder="Enter Custom Amount" class="w-full pl-12 pr-6 py-5 bg-gray-50 border-2 border-gray-100 rounded-2xl text-2xl font-bold focus:border-brand-green outline-none" required>
+                </div>
+
+                <!-- 80G Certificate Toggle -->
+                <div class="p-6 rounded-2xl bg-gray-50 border-2 border-dashed border-gray-200">
+                    <label class="flex items-center gap-4 cursor-pointer">
+                        <input type="checkbox" id="taxCheck" onchange="toggleTax()" class="w-7 h-7 accent-brand-green">
+                        <span class="font-bold text-gray-700 text-lg">I require an 80G Tax Exemption Certificate</span>
+                    </label>
+                    <div id="taxArea" class="hidden mt-6 space-y-4">
+                        <input type="text" id="panNum" placeholder="Permanent Account Number (PAN) *" class="w-full p-4 border border-gray-300 rounded-xl">
+                        <textarea id="addr" placeholder="Mailing Address for Certificate *" class="w-full p-4 border border-gray-300 rounded-xl h-24"></textarea>
+                        <p class="text-xs text-red-500 font-medium italic">※ As per Indian IT rules, PAN and Address are mandatory for Section 80G issuance.</p>
+                    </div>
+                </div>
+
+                <!-- Profile Info -->
+                <div class="grid md:grid-cols-2 gap-6">
+                    <input type="text" id="userName" placeholder="Full Name *" class="p-4 border border-gray-300 rounded-xl" required>
+                    <input type="email" id="userEmail" placeholder="Email Address *" class="p-4 border border-gray-300 rounded-xl" required>
+                </div>
+
+                <button type="submit" class="w-full bg-[#FFD54F] text-black py-6 rounded-2xl text-2xl font-black shadow-lg hover:bg-yellow-500 transition-all uppercase tracking-widest">
+                    Proceed to Donate
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="relative text-white mt-12 overflow-hidden">
+        <img src="https://i.ibb.co/6cSGTq8x/f6d495aa-1f44-4fb7-863f-719b3f1cae21.jpg" class="absolute inset-0 w-full h-full object-cover brightness-[0.2]" alt="Footer bg">
+        <div class="relative z-10 max-w-7xl mx-auto px-6 py-20 grid lg:grid-cols-3 gap-16">
+            <div>
+                <img src="https://i.ibb.co/BH0xP206/f11c7d00-15bd-495a-a7f5-e66b4aac1df6.jpg" class="h-20 w-20 rounded-full mb-6 border-2 border-white" alt="Footer Logo">
+                <h4 class="text-2xl font-bold mb-4">AMAR DHARA FOUNDATION</h4>
+                <p class="text-gray-400">A registered public charitable trust dedicated to sustainable community development across India.</p>
+            </div>
+            <div>
+                <h4 class="text-xl font-bold mb-6 text-yellow-400">Contact Official</h4>
+                <a href="mailto:AMARDHARAFOUNDATION@GMAIL.COM" class="text-lg hover:underline block mb-4">AMARDHARAFOUNDATION@GMAIL.COM</a>
+                <a href="https://www.facebook.com/share/1fqec7sqmm/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 bg-blue-600 w-fit px-6 py-3 rounded-xl hover:bg-blue-700 transition">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/2021_Facebook_icon.svg" class="w-6 h-6" alt="FB">
+                    <span class="font-bold">Follow Our Community</span>
+                </a>
+            </div>
+            <div>
+                <h4 class="text-xl font-bold mb-6 text-yellow-400">Trust Reference</h4>
+                <img src="https://i.ibb.co/gFyyjtCB/0431e1de-b56d-4bc3-a8b2-0a863c0b9646.jpg" class="w-full rounded-2xl border border-white/20 opacity-90 shadow-2xl" alt="Trust QR">
+            </div>
+        </div>
+        <div class="relative z-10 text-center py-8 border-t border-white/10 text-xs text-gray-500 font-bold uppercase tracking-widest">
+            © 2024 AMAR DHARA FOUNDATION | All Donations are Tax Exempted under 80G
+        </div>
+    </footer>
+
+    <!-- DYNAMIC QR MODAL -->
+    <div id="qrModal" class="fixed inset-0 z-[2000] flex items-center justify-center p-6">
+        <div class="bg-white rounded-[3rem] p-10 max-w-md w-full text-center relative shadow-2xl">
+            <button onclick="closeQR()" class="absolute top-6 right-6 text-gray-300 hover:text-black text-4xl leading-none">&times;</button>
+            <h3 class="text-2xl font-bold mb-2">Secure UPI Payment</h3>
+            <p class="text-gray-500 mb-8 text-sm">Scan to donate to Amar Dhara Foundation</p>
+            
+            <div id="qr-container" class="flex justify-center p-4 bg-gray-50 rounded-3xl mb-8 border border-gray-100"></div>
+            
+            <div class="space-y-4 text-left">
+                <div class="flex items-center gap-4 p-3 bg-green-50 rounded-xl border border-green-100">
+                    <span class="bg-brand-green text-white w-6 h-6 flex items-center justify-center rounded-full text-xs">1</span>
+                    <p class="text-xs font-bold text-brand-green">Open GPay, PhonePe, or Paytm</p>
+                </div>
+                <div class="flex items-center gap-4 p-3 bg-green-50 rounded-xl border border-green-100">
+                    <span class="bg-brand-green text-white w-6 h-6 flex items-center justify-center rounded-full text-xs">2</span>
+                    <p class="text-xs font-bold text-brand-green">Scan the QR code shown above</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const dict = {
+            en: { tagline: "Registered Public Charitable Trust", nav_donate: "Quick Donate", hero_title: "Empowering Lives, Restoring Dignity", cp_title: "Chairperson's Message" },
+            hi: { tagline: "पंजीकृत सार्वजनिक धर्मार्थ ट्रस्ट", nav_donate: "त्वरित दान", hero_title: "जीवन को सशक्त बनाना, गरिमा बहाल करना", cp_title: "अध्यक्ष का संदेश" }
+            // Bengali, Tamil, Gujarati follow...
+        };
+
+        function switchLang(l) {
+            const data = dict[l] || dict.en;
+            document.querySelectorAll('[data-i18n]').forEach(e => {
+                const k = e.getAttribute('data-i18n');
+                if(data[k]) e.innerText = data[k];
+            });
+        }
+
+        function setAmt(v) {
+            document.getElementById('amtInp').value = v;
+            document.querySelectorAll('.amt-chip').forEach(c => {
+                c.classList.toggle('active', c.innerText.includes(v.toLocaleString()));
+            });
+        }
+
+        function toggleTax() {
+            const c = document.getElementById('taxCheck').checked;
+            document.getElementById('taxArea').classList.toggle('hidden', !c);
+            document.getElementById('panNum').required = c;
+            document.getElementById('addr').required = c;
+        }
+
+        function closeQR() { document.getElementById('qrModal').style.display = 'none'; }
+
+        document.getElementById('donForm').onsubmit = async (e) => {
+            e.preventDefault();
+            const amt = document.getElementById('amtInp').value;
+            const name = document.getElementById('userName').value;
+            
+            // Generate UPI Link: Replace 'AMARDHARA@okaxis' with your actual trust UPI ID
+            const upi = `upi://pay?pa=AMARDHARA@okaxis&pn=AMAR_DHARA_FOUNDATION&am=${amt}&cu=INR&tn=Donation_by_${name.replace(/\s/g, '_')}`;
+            
+            document.getElementById('qr-container').innerHTML = "";
+            new QRCode(document.getElementById("qr-container"), { text: upi, width: 250, height: 250 });
+            document.getElementById('qrModal').style.display = 'flex';
+
+            // Send to Backend
+            fetch('/api/submit-donation', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({
+                    name: name,
+                    email: document.getElementById('userEmail').value,
+                    amount: amt,
+                    pan: document.getElementById('panNum').value,
+                    address: document.getElementById('addr').value
+                })
+            });
+        };
+    </script>
+</body>
+</html>
