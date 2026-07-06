@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amar Dhara Foundation | Registered Public Charitable Trust</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primaryGreen: '#1E5631',
+                        accentYellow: '#FFF9C4',
+                        softYellow: '#FFFDE7',
+                        btnYellow: '#FFD700'
+                    },
+                    fontFamily: { sans: ['Inter', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+    <style>
+        .preset-chip.active { background-color: #1E5631 !important; color: white !important; border-color: #1E5631 !important; }
+        .sticky-nav { backdrop-filter: blur(8px); background: rgba(255, 255, 255, 0.95); }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans text-gray-900">
+
+    <!-- NAVIGATION -->
+    <nav class="sticky-nav sticky top-0 z-50 border-b border-gray-200 py-3">
+        <div class="max-w-7xl mx-auto px-4 flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <img src="https://i.ibb.co/BH0xP206/f11c7d00-15bd-495a-a7f5-e66b4aac1df6.jpg" alt="Logo" class="h-14 w-14 rounded-full shadow-sm border border-primaryGreen">
+                <div>
+                    <h1 class="text-primaryGreen font-bold text-xl leading-none">AMAR DHARA FOUNDATION</h1>
+                    <span class="text-[10px] text-gray-500 uppercase tracking-tighter" data-i18n="reg_text">Registered Public Charitable Trust</span>
+                </div>
+            </div>
+            
+            <div class="hidden md:flex items-center space-x-6 font-semibold text-gray-700">
+                <a href="#about" data-i18n="nav_about">About Us</a>
+                <a href="#services" data-i18n="nav_services">Our Work</a>
+                <select id="langSelect" class="bg-softYellow border border-primaryGreen rounded px-2 py-1 text-sm outline-none cursor-pointer">
+                    <option value="en">English</option>
+                    <option value="hi">हिन्दी</option>
+                    <option value="bn">বাংলা</option>
+                    <option value="ta">தமிழ்</option>
+                    <option value="gu">ગુજરાતી</option>
+                </select>
+                <a href="#donation-form" class="bg-primaryGreen text-white px-6 py-2 rounded-full hover:bg-green-800 transition-all" data-i18n="btn_quick_donate">Quick Donate</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="relative h-[500px] flex items-center overflow-hidden">
+        <img src="https://i.ibb.co/XZxZ6LfH/88dee948-f04f-4e42-97d7-c57bcf4c9d82.jpg" class="absolute inset-0 w-full h-full object-cover" alt="Banner">
+        <div class="absolute inset-0 bg-black/40"></div>
+        <div class="relative max-w-7xl mx-auto px-4 text-white">
+            <h2 class="text-4xl md:text-6xl font-bold mb-4 leading-tight" data-i18n="hero_title">Empowering the <br>Underserved in India</h2>
+            <p class="text-lg md:text-xl max-w-2xl opacity-90 mb-8" data-i18n="hero_sub">Transparent ground-level action for health, education, and elder care.</p>
+            <a href="#donation-form" class="bg-btnYellow text-black px-10 py-4 rounded-lg font-bold text-lg shadow-lg hover:scale-105 transition-transform inline-block" data-i18n="hero_btn">Start Helping Today</a>
+        </div>
+    </section>
+
+    <!-- LEADERSHIP MESSAGE -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
+            <div>
+                <img src="https://i.ibb.co/NnSCLgX2/675251d1-2712-48e5-83af-b50ca37d97de.jpg" alt="Chairperson" class="rounded-2xl shadow-2xl border-8 border-softYellow">
+            </div>
+            <div>
+                <h3 class="text-primaryGreen font-bold uppercase tracking-widest text-sm mb-2" data-i18n="leader_label">Leadership Message</h3>
+                <h2 class="text-3xl font-bold mb-6 text-gray-800" data-i18n="leader_title">Working for Humanity</h2>
+                <p class="text-gray-600 text-lg leading-relaxed mb-6 italic" data-i18n="leader_msg">
+                    "Amar Dhara Foundation was established with a singular vision: to bridge the gap between resources and those who have been left behind. We ensure absolute transparency in every drop of aid provided."
+                </p>
+                <div class="bg-softYellow p-6 rounded-xl border-l-4 border-primaryGreen">
+                    <h4 class="font-bold text-primaryGreen mb-2" data-i18n="mission_title">Our Trust Mission</h4>
+                    <p class="text-gray-700" data-i18n="mission_text">To provide healthcare, educational infrastructure, and disaster relief to the grassroots of India through verified donor participation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3-COLUMN SERVICE GRID -->
+    <section id="services" class="py-20 bg-softYellow">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-primaryGreen" data-i18n="pillars_title">Pillars of Our Foundation</h2>
+                <div class="h-1 w-20 bg-primaryGreen mx-auto mt-4"></div>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Column 1 -->
+                <div class="bg-white p-8 rounded-2xl shadow-md border border-gray-100 hover:shadow-xl transition-shadow">
+                    <div class="text-primaryGreen text-4xl mb-6"><i class="fas fa-graduation-cap"></i></div>
+                    <h3 class="text-xl font-bold mb-4" data-i18n="srv_1_title">Education & Literacy</h3>
+                    <p class="text-gray-600 leading-relaxed" data-i18n="srv_1_text">Providing essential learning kits, stationaries, and after-school tuition for children in rural clusters.</p>
+                </div>
+                <!-- Column 2 -->
+                <div class="bg-white p-8 rounded-2xl shadow-md border border-gray-100 hover:shadow-xl transition-shadow">
+                    <div class="text-primaryGreen text-4xl mb-6"><i class="fas fa-hand-holding-medical"></i></div>
+                    <h3 class="text-xl font-bold mb-4" data-i18n="srv_2_title">Health & Elder Care</h3>
+                    <p class="text-gray-600 leading-relaxed" data-i18n="srv_2_text">Mobile health clinics and social companionship programs for isolated senior citizens without support systems.</p>
+                </div>
+                <!-- Column 3 -->
+                <div class="bg-white p-8 rounded-2xl shadow-md border border-gray-100 hover:shadow-xl transition-shadow">
+                    <div class="text-primaryGreen text-4xl mb-6"><i class="fas fa-users-cog"></i></div>
+                    <h3 class="text-xl font-bold mb-4" data-i18n="srv_3_title">Community Welfare</h3>
+                    <p class="text-gray-600 leading-relaxed" data-i18n="srv_3_text">Emergency nutritional kits and community kitchens during disaster periods and extreme seasons.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DONATION COMPONENT (HelpAge Style) -->
+    <section id="donation-form" class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4">
+            <div class="bg-white border border-gray-200 shadow-2xl rounded-3xl overflow-hidden">
+                <div class="bg-primaryGreen p-6 text-white text-center">
+                    <h2 class="text-2xl font-bold" data-i18n="donate_head">Help Support Amar Dhara</h2>
+                    <p class="text-sm opacity-80" data-i18n="donate_sub">Select your donation preference</p>
+                </div>
+
+                <div class="p-8 space-y-8">
+                    <!-- Toggles -->
+                    <div class="flex flex-wrap gap-4 justify-center">
+                        <div class="bg-gray-100 p-1 rounded-full flex">
+                            <button class="px-6 py-2 rounded-full font-bold bg-white shadow-sm" id="btnIndian">Indian Citizen</button>
+                            <button class="px-6 py-2 rounded-full font-bold text-gray-500" id="btnForeign">Foreign/OCI</button>
+                        </div>
+                        <div class="bg-gray-100 p-1 rounded-full flex">
+                            <button class="px-6 py-2 rounded-full font-bold bg-white shadow-sm" id="btnOneTime">One Time</button>
+                            <button class="px-6 py-2 rounded-full font-bold text-gray-500" id="btnMonthly">Monthly</button>
+                        </div>
+                    </div>
+
+                    <!-- Preset Chips -->
+                    <div class="grid grid-cols-3 gap-4">
+                        <button onclick="setAmount(5000)" class="preset-chip py-4 border-2 border-gray-200 rounded-xl font-bold hover:border-primaryGreen transition-all">₹ 5,000</button>
+                        <button onclick="setAmount(10000)" class="preset-chip py-4 border-2 border-gray-200 rounded-xl font-bold hover:border-primaryGreen transition-all">₹ 10,000</button>
+                        <button onclick="setAmount(20000)" class="preset-chip py-4 border-2 border-gray-200 rounded-xl font-bold hover:border-primaryGreen transition-all">₹ 20,000</button>
+                    </div>
+
+                    <!-- Input Amount -->
+                    <div class="relative">
+                        <span class="absolute left-4 top-1/2 -translate-y-1/2 text-2xl font-bold text-gray-400">₹</span>
+                        <input type="number" id="customAmount" placeholder="Enter Amount" class="w-full pl-12 pr-4 py-4 border-2 border-gray-200 rounded-xl text-2xl font-bold outline-none focus:border-primaryGreen">
+                    </div>
+
+                    <!-- 80G Logic -->
+                    <div class="bg-softYellow p-6 rounded-xl border border-yellow-200">
+                        <label class="flex items-center space-x-3 cursor-pointer">
+                            <input type="checkbox" id="taxExemption" class="w-5 h-5 accent-primaryGreen">
+                            <span class="font-bold text-gray-800">I require an 80G Tax Exemption Certificate</span>
+                        </label>
+                        
+                        <div id="taxDetails" class="hidden mt-6 space-y-4 animate-fadeIn">
+                            <p class="text-xs text-red-700 leading-tight mb-4">
+                                * As per Indian Income Tax rules, a donor with an Indian passport is required to add their Address and PAN number to receive Section 80G tax-exemption certificates.
+                            </p>
+                            <input type="text" id="panNumber" placeholder="Enter 10-Digit PAN Number" class="w-full p-4 border border-gray-300 rounded-lg outline-none focus:ring-2 ring-primaryGreen">
+                            <textarea id="address" placeholder="Full Mailing Address" class="w-full p-4 border border-gray-300 rounded-lg h-24 outline-none focus:ring-2 ring-primaryGreen"></textarea>
+                        </div>
+                    </div>
+
+                    <!-- Action Button -->
+                    <button onclick="handleProceed()" class="w-full bg-primaryGreen text-white py-5 rounded-2xl text-xl font-bold hover:bg-green-800 shadow-xl transition-all">
+                        PROCEED TO DONATE
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- QR MODAL -->
+    <div id="qrModal" class="fixed inset-0 bg-black/80 z-[100] hidden items-center justify-center p-4">
+        <div class="bg-white rounded-3xl p-8 max-w-md w-full text-center relative">
+            <button onclick="closeModal()" class="absolute top-4 right-4 text-gray-400 text-2xl">&times;</button>
+            <h3 class="text-xl font-bold text-primaryGreen mb-4">Scan QR to Complete Donation</h3>
+            <div id="qrcode" class="flex justify-center mb-6"></div>
+            <div class="space-y-4 text-left bg-gray-50 p-4 rounded-xl border border-gray-200">
+                <p class="text-sm font-semibold flex items-center"><span class="bg-primaryGreen text-white w-6 h-6 rounded-full flex items-center justify-center mr-2 text-xs">1</span> Open any UPI App (GPay, PhonePe, BHIM)</p>
+                <p class="text-sm font-semibold flex items-center"><span class="bg-primaryGreen text-white w-6 h-6 rounded-full flex items-center justify-center mr-2 text-xs">2</span> Scan the QR Code above</p>
+                <p class="text-sm font-semibold flex items-center"><span class="bg-primaryGreen text-white w-6 h-6 rounded-full flex items-center justify-center mr-2 text-xs">3</span> Enter PIN and complete payment</p>
+            </div>
+            <p class="mt-4 text-xs text-gray-500 italic">Amar Dhara Foundation is tracking your request. A receipt will be shared shortly.</p>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="bg-primaryGreen text-white pt-20">
+        <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-3 gap-12 pb-12 border-b border-white/10">
+            <div>
+                <img src="https://i.ibb.co/BH0xP206/f11c7d00-15bd-495a-a7f5-e66b4aac1df6.jpg" class="h-16 mb-6 rounded-full" alt="Logo">
+                <p class="text-sm text-gray-300">AMAR DHARA FOUNDATION is a government registered public charitable trust dedicated to uplifting the marginalized communities of India.</p>
+            </div>
+            <div>
+                <h4 class="text-lg font-bold mb-6">Contact Us</h4>
+                <ul class="space-y-4 text-sm text-gray-300">
+                    <li><i class="fas fa-envelope mr-2"></i> <a href="mailto:AMARDHARAFOUNDATION@GMAIL.COM">AMARDHARAFOUNDATION@GMAIL.COM</a></li>
+                    <li><i class="fab fa-facebook mr-2"></i> <a href="https://www.facebook.com/share/1fqec7sqmm/" target="_blank">Facebook Community Page</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-lg font-bold mb-6">Legal</h4>
+                <p class="text-xs text-gray-400">Registered Public Charitable Trust<br>Section 80G Compliant<br>Govt of India Reg: [Insert Registration Number]</p>
+                <img src="https://i.ibb.co/6cSGTq8x/f6d495aa-1f44-4fb7-863f-719b3f1cae21.jpg" class="mt-4 rounded-lg opacity-40 grayscale" alt="Impact">
+            </div>
+        </div>
+        <div class="bg-green-950 py-4 text-center text-[10px] text-gray-500 uppercase tracking-widest">
+            © 2024 Amar Dhara Foundation. All Rights Reserved.
+        </div>
+    </footer>
+
+    <script>
+        // Multi-Language Dictionary
+        const i18n = {
+            en: {
+                reg_text: "Registered Public Charitable Trust", nav_about: "About Us", nav_services: "Our Work", 
+                btn_quick_donate: "Quick Donate", hero_title: "Empowering the Underserved in India", 
+                hero_sub: "Transparent ground-level action for health, education, and elder care.", hero_btn: "Start Helping Today",
+                leader_title: "Working for Humanity", mission_title: "Our Trust Mission", srv_1_title: "Education & Literacy",
+                srv_2_title: "Health & Elder Care", srv_3_title: "Community Welfare", donate_head: "Help Support Amar Dhara"
+            },
+            hi: {
+                reg_text: "पंजीकृत सार्वजनिक धर्मार्थ ट्रस्ट", nav_about: "हमारे बारे में", nav_services: "हमारा काम",
+                btn_quick_donate: "त्वरित दान", hero_title: "भारत में वंचितों का सशक्तिकरण",
+                hero_sub: "स्वास्थ्य, शिक्षा और बुजुर्गों की देखभाल के लिए पारदर्शी जमीनी कार्रवाई।", hero_btn: "आज ही मदद शुरू करें",
+                leader_title: "मानवता के लिए कार्य", mission_title: "हमारा ट्रस्ट मिशन", srv_1_title: "शिक्षा और साक्षरता",
+                srv_2_title: "स्वास्थ्य और बुजुर्गों की देखभाल", srv_3_title: "सामुदायिक कल्याण", donate_head: "अमर धारा की सहायता करें"
+            },
+            // Bengali, Tamil, Gujarati shortened for brevity here - in production fill all keys
+            bn: { reg_text: "নিবন্ধিত পাবলিক চ্যারিটেবল ট্রাস্ট", hero_title: "ভারতের সুবিধাবঞ্চিতদের ক্ষমতায়ন", donate_head: "অমর ধারাকে সাহায্য করুন" },
+            ta: { reg_text: "பதிவு செய்யப்பட்ட பொது அறக்கட்டளை", hero_title: "இந்தியாவில் பின்தங்கியவர்களுக்கு அதிகாரம் அளித்தல்", donate_head: "அமர் தாரா அறக்கட்டளைக்கு உதவுங்கள்" },
+            gu: { reg_text: "રજિસ્ટર્ડ પબ્લિક ચેરિટેબલ ટ્રસ્ટ", hero_title: "ભારતમાં વંચિતોનું સશક્તિકરણ", donate_head: "અમર ધારા ફાઉન્ડેશનને મદદ કરો" }
+        };
+
+        // Language Switcher Logic
+        document.getElementById('langSelect').addEventListener('change', (e) => {
+            const lang = e.target.value;
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if(i18n[lang][key]) el.innerText = i18n[lang][key];
+            });
+        });
+
+        // Donation Logic
+        function setAmount(amt) {
+            document.getElementById('customAmount').value = amt;
+            document.querySelectorAll('.preset-chip').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+        }
+
+        document.getElementById('taxExemption').addEventListener('change', function() {
+            document.getElementById('taxDetails').style.display = this.checked ? 'block' : 'none';
+        });
+
+        const qrcodeContainer = document.getElementById("qrcode");
+        function generateQR(amount) {
+            qrcodeContainer.innerHTML = "";
+            // Replace with your real UPI ID
+            const upiUrl = `upi://pay?pa=AMARDHARA@okaxis&pn=AMAR_DHARA_FOUNDATION&am=${amount}&cu=INR&tn=Donation_to_Foundation`;
+            new QRCode(qrcodeContainer, { text: upiUrl, width: 250, height: 250 });
+        }
+
+        function handleProceed() {
+            const amt = document.getElementById('customAmount').value;
+            const taxNeeded = document.getElementById('taxExemption').checked;
+            const pan = document.getElementById('panNumber').value;
+            const address = document.getElementById('address').value;
+
+            if(!amt || amt <= 0) { alert("Please enter a valid donation amount."); return; }
+            if(taxNeeded && (!pan || !address)) { alert("PAN and Address are mandatory for 80G certificate."); return; }
+
+            // Submit to Backend API
+            fetch('/api/submit-donation', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({ amount: amt, taxExemption: taxNeeded, pan, address, date: new Date() })
+            });
+
+            generateQR(amt);
+            document.getElementById('qrModal').style.display = 'flex';
+        }
+
+        function closeModal() { document.getElementById('qrModal').style.display = 'none'; }
+    </script>
+</body>
+</html>
