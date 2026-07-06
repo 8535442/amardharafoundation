@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amar Dhara Foundation Kolkata | Govt. Reg: 160400042</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #FFFDE7; scroll-behavior: smooth; }
+        .bg-primary-green { background-color: #1E5631; }
+        .text-primary-green { color: #1E5631; }
+        .border-primary-green { border-color: #1E5631; }
+        .sticky-nav { position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+        .donation-chip.active { background-color: #1E5631; color: white; border-color: #1E5631; }
+        .modal-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.96); z-index: 9999; align-items: center; justify-content: center; padding: 15px; }
+        .img-uncropped { width: 100%; height: auto; object-fit: contain; display: block; background-color: #000; }
+        .brand-text { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-weight: 900; color: #1E5631; text-transform: uppercase; }
+    </style>
+</head>
+<body>
+
+    <!-- 1. HEADER (Single Line Branding) -->
+    <nav class="bg-white sticky-nav">
+        <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center gap-2">
+            <div class="flex items-center gap-2 flex-1 min-w-0">
+                <img src="https://i.ibb.co/BH0xP206/f11c7d00-15bd-495a-a7f5-e66b4aac1df6.jpg" alt="Logo" class="h-10 w-10 md:h-14 md:w-14 rounded-full shrink-0">
+                <h1 class="text-[10px] sm:text-base md:text-2xl brand-text">AMAR DHARA FOUNDATION KOLKATA INDIA</h1>
+            </div>
+            <div class="shrink-0 flex items-center gap-2">
+                <select id="langSwitch" onchange="changeLanguage(this.value)" class="text-[10px] md:text-sm border-2 border-primary-green rounded-lg px-1 py-1 bg-white font-black outline-none cursor-pointer">
+                    <option value="en">English</option>
+                    <option value="hi">हिन्दी</option>
+                    <option value="bn">বাংলা</option>
+                </select>
+                <a href="#donate" class="bg-yellow-400 text-black px-3 py-2 rounded-full text-[10px] md:text-sm font-black hover:bg-yellow-500 shadow-sm whitespace-nowrap" data-i18n="nav_donate">DONATE</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 2. HERO IMPACT (Uncropped) -->
+    <section class="w-full">
+        <img src="https://i.ibb.co/XZxZ6LfH/88dee948-f04f-4e42-97d7-c57bcf4c9d82.jpg" class="img-uncropped" alt="Field Impact">
+    </section>
+
+    <!-- 3. LEADERSHIP (Uncropped) -->
+    <section class="max-w-7xl mx-auto py-12 px-4">
+        <div class="grid md:grid-cols-2 gap-8 items-center bg-white rounded-3xl overflow-hidden shadow-xl border border-gray-100">
+            <div class="p-8 order-2 md:order-1">
+                <h2 class="text-3xl font-bold text-primary-green mb-4" data-i18n="cp_title">Leadership Message</h2>
+                <div class="w-16 h-1 bg-yellow-400 mb-6"></div>
+                <p class="text-gray-700 text-lg leading-relaxed italic mb-8" data-i18n="cp_msg">
+                    "Service to humanity is service to God. Our foundation is dedicated to uplifting the marginalized communities in Kolkata through direct ground-level impact."
+                </p>
+                <p class="font-bold text-xl text-primary-green tracking-tight uppercase">Amar Dhara Foundation Trust</p>
+            </div>
+            <div class="order-1 md:order-2">
+                <img src="https://i.ibb.co/NnSCLgX2/675251d1-2712-48e5-83af-b50ca37d97de.jpg" class="img-uncropped" alt="Chairperson">
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. MISSION GRID (Uncropped) -->
+    <section class="bg-white py-16 px-4">
+        <div class="max-w-7xl mx-auto">
+            <h3 class="text-3xl font-bold text-center text-primary-green mb-12 uppercase tracking-wide" data-i18n="mission_title">Our Mission & Principles</h3>
+            <div class="mb-12">
+                <img src="https://i.ibb.co/VpMYnbT0/2c902fcc-599f-4649-9f3d-9421dffc2a3a.jpg" class="img-uncropped rounded-2xl mx-auto shadow-md" alt="Core Mission">
+            </div>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="p-8 bg-[#FFF9C4] rounded-2xl border-t-8 border-primary-green shadow-sm">
+                    <h4 class="font-bold text-xl mb-3" data-i18n="p1_h">Literacy Support</h4>
+                    <p class="text-sm text-gray-700" data-i18n="p1_p">Educational resources and foundational classes for underprivileged children.</p>
+                </div>
+                <div class="p-8 bg-[#FFF9C4] rounded-2xl border-t-8 border-primary-green shadow-sm">
+                    <h4 class="font-bold text-xl mb-3" data-i18n="p2_h">Health & Elders</h4>
+                    <p class="text-sm text-gray-700" data-i18n="p2_p">Diagnostic checkups and medical support for senior citizens in need.</p>
+                </div>
+                <div class="p-8 bg-[#FFF9C4] rounded-2xl border-t-8 border-primary-green shadow-sm">
+                    <h4 class="font-bold text-xl mb-3" data-i18n="p3_h">Community Aid</h4>
+                    <p class="text-sm text-gray-700" data-i18n="p3_p">Food drives and essential nutritional assistance across Kolkata city.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. DONATION FORM (Direct UPI Logic) -->
+    <section id="donate" class="max-w-4xl mx-auto py-20 px-4">
+        <div class="bg-white rounded-[2.5rem] shadow-2xl border border-gray-100 overflow-hidden">
+            <div class="bg-primary-green text-white py-8 px-8 text-center">
+                <h2 class="text-2xl font-bold uppercase tracking-tight" data-i18n="don_header">Secure Donation Portal</h2>
+                <p class="text-[10px] text-yellow-300 mt-2 font-bold tracking-widest">AMARDHARAFOUNDATION@OKSBI</p>
+            </div>
+            <form id="donationForm" class="p-8 space-y-6">
+                <!-- UPDATED AMOUNTS -->
+                <div class="grid grid-cols-3 gap-3">
+                    <button type="button" class="donation-chip py-4 border-2 border-gray-100 rounded-xl font-bold text-lg hover:border-primary-green transition" onclick="setVal(1000)">₹1,000</button>
+                    <button type="button" class="donation-chip py-4 border-2 border-gray-100 rounded-xl font-bold text-lg hover:border-primary-green transition" onclick="setVal(5000)">₹5,000</button>
+                    <button type="button" class="donation-chip py-4 border-2 border-gray-100 rounded-xl font-bold text-lg hover:border-primary-green transition" onclick="setVal(10000)">₹10,000</button>
+                </div>
+                <input type="number" id="amtInp" placeholder="Enter Amount *" class="w-full p-5 bg-gray-50 border-2 border-gray-200 rounded-2xl text-2xl font-black focus:border-primary-green outline-none" required>
+                
+                <div class="grid md:grid-cols-2 gap-4">
+                    <input type="text" id="donorName" placeholder="Full Name *" class="p-4 border rounded-xl font-semibold" required>
+                    <input type="email" id="donorEmail" placeholder="Email Address *" class="p-4 border rounded-xl font-semibold" required>
+                </div>
+                <input type="tel" id="donorWhatsapp" placeholder="WhatsApp Number *" class="w-full p-4 border rounded-xl font-semibold" required>
+
+                <div class="p-6 bg-yellow-50 rounded-2xl border-2 border-dashed border-yellow-300">
+                    <label class="flex items-center space-x-4 cursor-pointer">
+                        <input type="checkbox" id="taxCheck" onchange="toggle80G()" class="w-7 h-7 accent-primary-green">
+                        <span class="font-bold text-gray-700 text-lg" data-i18n="80g_label">Require 80G Tax Exemption</span>
+                    </label>
+                    <div id="taxArea" class="hidden mt-6 space-y-4">
+                        <input type="text" id="panNum" placeholder="PAN Card Number *" class="w-full p-4 border rounded-xl">
+                        <textarea id="address" placeholder="Full Registered Address *" class="w-full p-4 border rounded-xl h-24"></textarea>
+                    </div>
+                </div>
+
+                <button type="submit" class="w-full bg-yellow-400 text-black py-6 rounded-2xl text-2xl font-black shadow-xl hover:bg-yellow-500 transition-all uppercase tracking-tighter">
+                    <span data-i18n="btn_pay">PROCEED TO PAY</span>
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- 6. HIGH VISIBILITY FOOTER (Trust Data Extracted) -->
+    <footer class="relative bg-primary-green text-white">
+        <div class="absolute inset-0 z-0">
+             <img src="https://i.ibb.co/6cSGTq8x/f6d495aa-1f44-4fb7-863f-719b3f1cae21.jpg" class="w-full h-full object-cover opacity-20 brightness-[0.2]">
+        </div>
+        
+        <div class="relative z-10 max-w-7xl mx-auto px-6 py-20">
+            <div class="grid lg:grid-cols-3 gap-16 mb-16">
+                <div>
+                    <h4 class="text-2xl font-black mb-4 tracking-tighter uppercase">AMAR DHARA FOUNDATION</h4>
+                    <p class="text-gray-400">Registered Public Charitable Trust dedicated to social welfare and human dignity across Kolkata and West Bengal.</p>
+                </div>
+                <div>
+                    <h4 class="text-xl font-bold mb-6 text-yellow-400 uppercase tracking-widest" data-i18n="footer_connect">Connect</h4>
+                    <div class="space-y-3 font-bold text-sm">
+                        <p>Email: amardharafoundation@gmail.com</p>
+                        <p>Mobiles: +91 9143015502 / 9143015504</p>
+                        <a href="https://www.facebook.com/share/1JEntTbvyK/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-blue-600 px-6 py-3 rounded-xl font-black hover:bg-blue-700 transition shadow-lg mt-4">
+                            Visit Facebook Community
+                        </a>
+                    </div>
+                </div>
+                <div class="flex justify-center lg:justify-start">
+                    <img src="https://i.ibb.co/gFyyjtCB/0431e1de-b56d-4bc3-a8b2-0a863c0b9646.jpg" class="h-44 rounded-2xl border-4 border-white shadow-2xl" alt="Trust ID">
+                </div>
+            </div>
+
+            <!-- REGISTRATION & ADDRESS (HIGH CONTRAST YELLOW BOX) -->
+            <div class="bg-yellow-400 text-black p-10 rounded-[2rem] border-4 border-white shadow-2xl">
+                <div class="grid md:grid-cols-2 gap-10 text-center md:text-left">
+                    <div>
+                        <h5 class="text-[10px] font-black uppercase text-primary-green mb-2 tracking-[0.25em]">OFFICIAL REGISTRATION</h5>
+                        <p class="text-2xl md:text-4xl font-black tracking-tighter">GOVT. REGISTRATION NO : 160400042</p>
+                    </div>
+                    <div>
+                        <h5 class="text-[10px] font-black uppercase text-primary-green mb-2 tracking-[0.25em]">REGISTERED OFFICE ADDRESS</h5>
+                        <p class="text-lg md:text-xl font-extrabold uppercase leading-tight">HOUSE NO. 5, BUDDHANAGAR, BUDDHA MANDIR, NATUNHAT, KOLKATA-700141</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- PAYMENT MODAL (Solves Browser Deep Link Issues) -->
+    <div id="payModal" class="modal-overlay">
+        <div class="bg-white rounded-[3rem] p-10 max-w-sm w-full text-center shadow-2xl relative">
+            <button onclick="closeModal()" class="absolute top-6 right-8 text-4xl text-gray-300 hover:text-black">&times;</button>
+            <h3 class="text-2xl font-black mb-1 text-primary-green">Complete Payment</h3>
+            <p id="modalAmtDisplay" class="text-3xl font-black text-gray-900 mb-8">₹ 0.00</p>
+            
+            <!-- MOBILE LINK: PHYSICAL USER CLICK TRIGGER -->
+            <div id="mobileUI" class="mb-8 hidden">
+                <a id="directUpiBtn" href="#" class="block bg-primary-green text-white py-5 rounded-2xl text-xl font-bold shadow-xl hover:bg-green-800 transition uppercase">
+                    OPEN PAYMENT APP
+                </a>
+                <p class="text-[9px] text-gray-400 mt-4 uppercase font-bold tracking-widest">Select PhonePe, GPay, or Paytm</p>
+            </div>
+
+            <!-- DESKTOP QR CODE -->
+            <div id="desktopUI" class="hidden">
+                <div id="qrcode" class="flex justify-center mb-6 border-4 border-gray-100 p-3 rounded-3xl"></div>
+                <p class="text-xs font-bold text-primary-green bg-green-50 p-4 rounded-xl leading-snug">Scan QR using your mobile camera or any UPI App</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const translations = {
+            en: {
+                nav_donate: "DONATE", cp_title: "Leadership Message", cp_msg: "Service to humanity is service to God. Our foundation is dedicated to uplifting the marginalized communities in Kolkata through direct ground-level impact.",
+                mission_title: "Our Mission & Principles", p1_h: "Literacy Support", p1_p: "Educational resources and foundational classes for underprivileged children.",
+                p2_h: "Health & Elders", p2_p: "Diagnostic checkups and medical support for senior citizens in need.",
+                p3_h: "Community Aid", p3_p: "Food drives and essential nutritional assistance across Kolkata city.",
+                don_header: "Secure Donation Portal", 80g_label: "Require 80G Tax Exemption", btn_pay: "PROCEED TO PAY", footer_connect: "Connect With Us"
+            },
+            hi: {
+                nav_donate: "दान करें", cp_title: "नेतृत्व का संदेश", cp_msg: "मानवता की सेवा ही ईश्वर की सेवा है। हमारी संस्था कोलकाता में वंचित समुदायों के उत्थान के लिए समर्पित है।",
+                mission_title: "हमारा लक्ष्य और सिद्धांत", p1_h: "शिक्षा सहायता", p1_p: "वंचित बच्चों के लिए शैक्षिक संसाधन और बुनियादी शिक्षा।",
+                p2_h: "स्वास्थ्य और बुजुर्ग", p2_p: "जरूरतमंद वरिष्ठ नागरिकों के लिए स्वास्थ्य जांच और सहायता।",
+                p3_h: "सामुदायिक सहायता", p3_p: "कोलकाता शहर भर में भोजन वितरण और आवश्यक पोषण कार्यक्रम।",
+                don_header: "सुरक्षित दान पोर्टल", 80g_label: "80G आयकर छूट आवश्यक है", btn_pay: "भुगतान करें", footer_connect: "संपर्क करें"
+            },
+            bn: {
+                nav_donate: "দান করুন", cp_title: "নেতৃত্বের বার্তা", cp_msg: "মানবসেবাই ঈশ্বরসেবা। আমাদের ফাউন্ডেশন কলকাতার সুবিধাবঞ্চিত মানুষের উন্নতির জন্য নিবেদিত।",
+                mission_title: "আমাদের লক্ষ্য ও নীতি", p1_h: "শিক্ষা সহায়তা", p1_p: "সুবিধাবঞ্চিত শিশুদের জন্য শিক্ষাগত সম্পদ এবং প্রাথমিক পাঠদান।",
+                p2_h: "স্বাস্থ্য ও বয়স্ক সেবা", p2_p: "প্রবীণ নাগরিকদের জন্য স্বাস্থ্য পরীক্ষা এবং চিকিৎসা সহায়তা।",
+                p3_h: "সামাজিক সহায়তা", p3_p: "কলকাতা শহর জুড়ে খাদ্য বিতরণ এবং পুষ্টি সহায়তা কর্মসূচি।",
+                don_header: "নিরাপদ অনুদান পোর্টাল", 80g_label: "80G কর ছাড়ের শংসাপত্র প্রয়োজন", btn_pay: "পেমেন্ট করুন", footer_connect: "যোগাযোগ করুন"
+            }
+        };
+
+        function changeLanguage(lang) {
+            const content = translations[lang] || translations.en;
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (content[key]) el.innerText = content[key];
+            });
+        }
+
+        function setVal(v) {
+            document.getElementById('amtInp').value = v;
+            document.querySelectorAll('.donation-chip').forEach(c => {
+                c.classList.toggle('active', c.innerText.includes(v.toLocaleString()));
+            });
+        }
+
+        function toggle80G() { 
+            document.getElementById('taxArea').classList.toggle('hidden', !document.getElementById('taxCheck').checked); 
+        }
+
+        function closeModal() { document.getElementById('payModal').style.display = 'none'; }
+
+        document.getElementById('donationForm').onsubmit = (e) => {
+            e.preventDefault();
+            const amt = document.getElementById('amtInp').value;
+            const name = document.getElementById('donorName').value.replace(/\s/g, '_');
+            const upiUrl = `upi://pay?pa=amardharafoundation@oksbi&pn=AMAR_DHARA_FOUNDATION_KOLKATA_INDIA&am=${amt}&cu=INR&tn=Donation_from_${name}`;
+            
+            document.getElementById('modalAmtDisplay').innerText = "₹ " + parseFloat(amt).toLocaleString('en-IN');
+            document.getElementById('payModal').style.display = 'flex';
+
+            const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+            
+            if (isMobile) {
+                document.getElementById('mobileUI').classList.remove('hidden');
+                document.getElementById('desktopUI').classList.add('hidden');
+                document.getElementById('directUpiBtn').href = upiUrl;
+            } else {
+                document.getElementById('mobileUI').classList.add('hidden');
+                document.getElementById('desktopUI').classList.remove('hidden');
+                document.getElementById('qrcode').innerHTML = "";
+                new QRCode(document.getElementById("qrcode"), { text: upiUrl, width: 220, height: 220, colorDark: "#1E5631" });
+            }
+
+            // Backend Fetch logging (Silent Beacon for efficiency)
+            navigator.sendBeacon('/api/submit-donation', JSON.stringify({
+                name: document.getElementById('donorName').value,
+                email: document.getElementById('donorEmail').value,
+                whatsapp: document.getElementById('donorWhatsapp').value,
+                amount: amt,
+                pan: document.getElementById('panNum').value
+            }));
+        };
+    </script>
+</body>
+</html>
